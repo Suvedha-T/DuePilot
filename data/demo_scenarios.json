@@ -1,0 +1,401 @@
+{
+  "scenarios": {
+    "normal_day": {
+      "name": "Normal Day",
+      "description": "A balanced academic day with upcoming assignments, club duties, and admin tasks.",
+      "responsibilities": [
+        {
+          "id": "resp_ml_report",
+          "title": "Machine Learning Lab Report #3",
+          "category": "Academic",
+          "description": "Complete SVM & Kernel Ridge regression analysis and write up conclusions.",
+          "days_to_deadline": 2,
+          "deadline_str": "In 2 days, 11:59 PM",
+          "estimated_hours": 2.0,
+          "consequence_score": 75,
+          "importance_score": 80,
+          "difficulty_level": 3,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": [
+            {"id": "act_ml_1", "title": "Run confusion matrix analysis", "estimated_minutes": 45, "status": "completed"},
+            {"id": "act_ml_2", "title": "Draft methodology section", "estimated_minutes": 45, "status": "pending"},
+            {"id": "act_ml_3", "title": "Format graphs and submit PDF", "estimated_minutes": 30, "status": "pending"}
+          ]
+        },
+        {
+          "id": "resp_daa_pset",
+          "title": "DAA Problem Set 4 (Dynamic Programming)",
+          "category": "Academic",
+          "description": "Solve 5 problems on optimal matrix chain multiplication and Bellman-Ford.",
+          "days_to_deadline": 3,
+          "deadline_str": "In 3 days, 05:00 PM",
+          "estimated_hours": 3.0,
+          "consequence_score": 80,
+          "importance_score": 85,
+          "difficulty_level": 4,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": [
+            {"id": "act_daa_1", "title": "Draft pseudo-code proofs", "estimated_minutes": 90, "status": "pending"},
+            {"id": "act_daa_2", "title": "Type up solutions in LaTeX", "estimated_minutes": 90, "status": "pending"}
+          ]
+        },
+        {
+          "id": "resp_webdev_club",
+          "title": "Web Dev Club Workshop Prep",
+          "category": "Extracurricular",
+          "description": "Review starter repository and slides for React / Tailwind student workshop.",
+          "days_to_deadline": 4,
+          "deadline_str": "In 4 days, 06:00 PM",
+          "estimated_hours": 1.5,
+          "consequence_score": 40,
+          "importance_score": 50,
+          "difficulty_level": 2,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": [
+            {"id": "act_web_1", "title": "Verify starter code branches", "estimated_minutes": 45, "status": "pending"},
+            {"id": "act_web_2", "title": "Send reminder to registered participants", "estimated_minutes": 45, "status": "pending"}
+          ]
+        },
+        {
+          "id": "resp_fee_receipt",
+          "title": "Submit Semester Exam Registration Form",
+          "category": "Admin",
+          "description": "Sign exam form, attach payment receipt, and upload to academic ERP.",
+          "days_to_deadline": 6,
+          "deadline_str": "In 6 days, 04:00 PM",
+          "estimated_hours": 0.5,
+          "consequence_score": 90,
+          "importance_score": 70,
+          "difficulty_level": 1,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": [
+            {"id": "act_fee_1", "title": "Download receipt from banking portal", "estimated_minutes": 15, "status": "pending"},
+            {"id": "act_fee_2", "title": "Upload PDF to Dean of Academics portal", "estimated_minutes": 15, "status": "pending"}
+          ]
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dep_ml_sub",
+          "from_node": "act_ml_2",
+          "to_node": "act_ml_3",
+          "dependency_type": "depends_on",
+          "description": "Drafting required before formatting"
+        }
+      ]
+    },
+    "deadline_shock": {
+      "name": "Deadline Shock",
+      "description": "Simulates a surprise schedule disruption where an exam moves forward, colliding with existing work.",
+      "responsibilities": [
+        {
+          "id": "resp_ml_assign",
+          "title": "ML Lab Assignment Submission",
+          "category": "Academic",
+          "description": "Deep learning convolutional model training & report submission on Google Classroom.",
+          "days_to_deadline": 1,
+          "deadline_str": "Tomorrow, 11:59 PM",
+          "estimated_hours": 2.5,
+          "consequence_score": 85,
+          "importance_score": 85,
+          "difficulty_level": 3,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": [
+            {"id": "act_ml_sh_1", "title": "Evaluate validation loss curves", "estimated_minutes": 45, "status": "pending"},
+            {"id": "act_ml_sh_2", "title": "Complete discussion & upload notebook", "estimated_minutes": 105, "status": "pending"}
+          ]
+        },
+        {
+          "id": "resp_daa_prep",
+          "title": "DAA Midterm Problem Set",
+          "category": "Academic",
+          "description": "Greedy algorithms and Dynamic Programming problem set proofs.",
+          "days_to_deadline": 3,
+          "deadline_str": "In 3 days, 10:00 AM",
+          "estimated_hours": 3.0,
+          "consequence_score": 80,
+          "importance_score": 80,
+          "difficulty_level": 4,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": [
+            {"id": "act_daa_sh_1", "title": "Solve Huffman coding proofs", "estimated_minutes": 90, "status": "pending"},
+            {"id": "act_daa_sh_2", "title": "Draft knapsack dynamic tables", "estimated_minutes": 90, "status": "pending"}
+          ]
+        },
+        {
+          "id": "resp_internship_app",
+          "title": "Goldman Sachs Summer Analyst Application",
+          "category": "Career",
+          "description": "Complete application form, resume tailoring, and behavioral questionnaire.",
+          "days_to_deadline": 4,
+          "deadline_str": "In 4 days, 11:59 PM",
+          "estimated_hours": 2.0,
+          "consequence_score": 90,
+          "importance_score": 95,
+          "difficulty_level": 3,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": [
+            {"id": "act_int_sh_1", "title": "Tailor resume highlights for quantitative role", "estimated_minutes": 60, "status": "pending"},
+            {"id": "act_int_sh_2", "title": "Write 250-word motivation prompt", "estimated_minutes": 60, "status": "pending"}
+          ]
+        },
+        {
+          "id": "resp_placement_prep",
+          "title": "Placement Aptitude Test Preparation",
+          "category": "Career",
+          "description": "Cognitive and speed-math assessment prep for campus drive.",
+          "days_to_deadline": 5,
+          "deadline_str": "In 5 days (Friday), 10:00 AM",
+          "estimated_hours": 2.5,
+          "consequence_score": 95,
+          "importance_score": 95,
+          "difficulty_level": 4,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": [
+            {"id": "act_place_sh_1", "title": "Timed practice on quantitative aptitude", "estimated_minutes": 75, "status": "pending"},
+            {"id": "act_place_sh_2", "title": "Logical reasoning mock test", "estimated_minutes": 75, "status": "pending"}
+          ]
+        }
+      ],
+      "dependencies": [],
+      "shock_event": {
+        "text": "Placement aptitude test has been moved from Friday to tomorrow at 10 AM.",
+        "target_id": "resp_placement_prep",
+        "new_days_to_deadline": 0.7,
+        "new_deadline_str": "Tomorrow, 10:00 AM",
+        "reason": "Placement test deadline moved forward by 4 days! Immediate collision with ML Lab Assignment."
+      }
+    },
+    "dependency_blocked": {
+      "name": "Dependency Blocked",
+      "description": "Demonstrates blocker detection where an application cannot proceed without teammate inputs.",
+      "responsibilities": [
+        {
+          "id": "resp_internship_blocked",
+          "title": "Tier-1 Software Engineering Internship Portal",
+          "category": "Career",
+          "description": "Requires project architecture diagram and benchmarking metrics from capstone teammate.",
+          "days_to_deadline": 2,
+          "deadline_str": "In 2 days, 11:59 PM",
+          "estimated_hours": 2.5,
+          "consequence_score": 95,
+          "importance_score": 95,
+          "difficulty_level": 3,
+          "status": "blocked",
+          "is_blocked": true,
+          "blocker_reason": "Waiting for teammate Rahul to send finalized throughput benchmarks and metrics.",
+          "subactions": [
+            {"id": "act_dep_1", "title": "Draft base resume & cover letter", "estimated_minutes": 45, "status": "completed"},
+            {"id": "act_dep_2", "title": "Integrate capstone project metrics", "estimated_minutes": 45, "status": "blocked", "is_blocked": true, "blocker_reason": "Missing teammate Rahul's load-test numbers"},
+            {"id": "act_dep_3", "title": "Final review & PDF export", "estimated_minutes": 30, "status": "pending"}
+          ]
+        },
+        {
+          "id": "resp_os_quiz",
+          "title": "Operating Systems Quiz Prep",
+          "category": "Academic",
+          "description": "Virtual memory, page replacement algorithms, and deadlocks review.",
+          "days_to_deadline": 2,
+          "deadline_str": "In 2 days, 02:00 PM",
+          "estimated_hours": 2.0,
+          "consequence_score": 75,
+          "importance_score": 75,
+          "difficulty_level": 3,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": [
+            {"id": "act_os_1", "title": "Revise LRU vs FIFO page faults", "estimated_minutes": 60, "status": "pending"},
+            {"id": "act_os_2", "title": "Practice Banker's Algorithm questions", "estimated_minutes": 60, "status": "pending"}
+          ]
+        },
+        {
+          "id": "resp_symposium_flyer",
+          "title": "Tech Symposium Sponsor Deck",
+          "category": "Extracurricular",
+          "description": "Prepare 4-slide sponsorship tier proposal for IEEE student chapter.",
+          "days_to_deadline": 5,
+          "deadline_str": "In 5 days, 06:00 PM",
+          "estimated_hours": 2.0,
+          "consequence_score": 45,
+          "importance_score": 55,
+          "difficulty_level": 2,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": [
+            {"id": "act_symp_1", "title": "Draft sponsor package deliverables", "estimated_minutes": 60, "status": "pending"},
+            {"id": "act_symp_2", "title": "Design Figma slides", "estimated_minutes": 60, "status": "pending"}
+          ]
+        }
+      ],
+      "dependencies": [
+        {
+          "id": "dep_internship_1",
+          "from_node": "act_dep_1",
+          "to_node": "act_dep_2",
+          "dependency_type": "contains",
+          "description": "Resume sections contain project highlights"
+        },
+        {
+          "id": "dep_internship_block",
+          "from_node": "act_dep_2",
+          "to_node": "resp_internship_blocked",
+          "dependency_type": "blocked_by",
+          "description": "Application blocked until capstone benchmarks received"
+        }
+      ],
+      "blocker_draft": {
+        "recipient": "Rahul (Capstone Teammate)",
+        "channel": "WhatsApp",
+        "subject": "Urgent: Project metrics needed for internship portal",
+        "body": "Hey Rahul! Hope you're doing well. Could you please send over the finalized load-test benchmark numbers from our distributed KV-store project tonight? I need them to complete the Goldman Sachs internship application before the portal closes tomorrow. Thanks a ton!",
+        "reason": "Resolve blocker on Tier-1 Software Engineering Internship Portal"
+      }
+    },
+    "overloaded_week": {
+      "name": "Overloaded Week",
+      "description": "Detects workload explosion (11.5h required vs 5h daily budget) and suggests intelligent deferrals.",
+      "responsibilities": [
+        {
+          "id": "resp_ov_1",
+          "title": "Compilers Syntax Analyzer Phase 2",
+          "category": "Academic",
+          "description": "Bison & Flex parser implementation with AST node generation.",
+          "days_to_deadline": 1,
+          "deadline_str": "Tomorrow, 05:00 PM",
+          "estimated_hours": 3.5,
+          "consequence_score": 90,
+          "importance_score": 90,
+          "difficulty_level": 5,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": []
+        },
+        {
+          "id": "resp_ov_2",
+          "title": "Computer Networks Lab Viva Prep",
+          "category": "Academic",
+          "description": "Socket programming, TCP handshake, and Wireshark capture analysis.",
+          "days_to_deadline": 1,
+          "deadline_str": "Tomorrow, 02:00 PM",
+          "estimated_hours": 2.5,
+          "consequence_score": 85,
+          "importance_score": 80,
+          "difficulty_level": 3,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": []
+        },
+        {
+          "id": "resp_ov_3",
+          "title": "Google Summer of Code Proposal Draft",
+          "category": "Career",
+          "description": "Draft 6-page proposal outline for open-source container runtime project.",
+          "days_to_deadline": 2,
+          "deadline_str": "In 2 days, 11:59 PM",
+          "estimated_hours": 3.0,
+          "consequence_score": 95,
+          "importance_score": 95,
+          "difficulty_level": 4,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": []
+        },
+        {
+          "id": "resp_ov_4",
+          "title": "Cultural Fest Logistics Budget Approval",
+          "category": "Extracurricular",
+          "description": "Collect vendor quotes for sound system and submit to student council treasurer.",
+          "days_to_deadline": 2,
+          "deadline_str": "In 2 days, 04:00 PM",
+          "estimated_hours": 1.5,
+          "consequence_score": 35,
+          "importance_score": 40,
+          "difficulty_level": 2,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": []
+        },
+        {
+          "id": "resp_ov_5",
+          "title": "Hostel Room Re-allocation Form",
+          "category": "Admin",
+          "description": "Submit preferences for next semester hostel room allotment.",
+          "days_to_deadline": 3,
+          "deadline_str": "In 3 days, 12:00 PM",
+          "estimated_hours": 0.5,
+          "consequence_score": 80,
+          "importance_score": 60,
+          "difficulty_level": 1,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": []
+        },
+        {
+          "id": "resp_ov_6",
+          "title": "Optional AI Webinar Attendance",
+          "category": "Extracurricular",
+          "description": "Attend live session on Agentic workflows in industry.",
+          "days_to_deadline": 1,
+          "deadline_str": "Tomorrow, 07:00 PM",
+          "estimated_hours": 1.5,
+          "consequence_score": 20,
+          "importance_score": 30,
+          "difficulty_level": 1,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": []
+        }
+      ],
+      "dependencies": []
+    },
+    "internship_deadline": {
+      "name": "Internship Deadline",
+      "description": "High-stakes career opportunity closing in hours requiring immediate sprint.",
+      "responsibilities": [
+        {
+          "id": "resp_urg_intern",
+          "title": "Amazon Applied Scientist Internship Application",
+          "category": "Career",
+          "description": "Portal closes tonight. Requires research statement, code portfolio link, and references.",
+          "days_to_deadline": 0.4,
+          "deadline_str": "Tonight, 11:59 PM (in 8 hours)",
+          "estimated_hours": 3.0,
+          "consequence_score": 98,
+          "importance_score": 98,
+          "difficulty_level": 4,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": [
+            {"id": "act_u1", "title": "Refine 1-page ML research abstract", "estimated_minutes": 60, "status": "pending"},
+            {"id": "act_u2", "title": "Clean GitHub repos & benchmark READMEs", "estimated_minutes": 60, "status": "pending"},
+            {"id": "act_u3", "title": "Submit application form & double check attachments", "estimated_minutes": 60, "status": "pending"}
+          ]
+        },
+        {
+          "id": "resp_urg_dbms",
+          "title": "DBMS Normalization Assignment",
+          "category": "Academic",
+          "description": "BCNF and 3NF decomposition proofs for sample relational schema.",
+          "days_to_deadline": 2,
+          "deadline_str": "In 2 days, 05:00 PM",
+          "estimated_hours": 2.0,
+          "consequence_score": 70,
+          "importance_score": 75,
+          "difficulty_level": 3,
+          "status": "pending",
+          "is_blocked": false,
+          "subactions": []
+        }
+      ],
+      "dependencies": []
+    }
+  }
+}
